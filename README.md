@@ -1,1 +1,1 @@
-# inommatic-i-data-sciience-ntenship-assignment
+Data Science
