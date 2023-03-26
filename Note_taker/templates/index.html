@@ -1,0 +1,46 @@
+<head>
+    <style>
+        *{
+            background-color: aqua;
+
+        }
+    ul{
+         list-style: name; 
+      }
+      h1{
+        text-align: center;
+        background-color: rgb(50, 248, 28);
+        color: #ff6333;
+      }
+    h2{
+        margin-left: 40px;
+    }
+    button{
+        background-color: rgb(33, 18, 237);
+    }
+    #button_delete {
+                position: relative; left:40px;
+                }
+    </style>
+</head>
+<body>
+    <br><br>
+    <h1>Welcome to Bholu Notes</h1>
+    <br><br><hr><br><br>
+   <center> <h3>Please Write the notes the NoteBox:</h3>
+    <form action="" method="post">
+        <input type="text" name="note" autocomplete="off" size="45px" placeholder="Type your note">
+        <button value="add" name="submit_note">Add Note</button>
+<br><br><hr><br><br>
+{% if session['notes'] %}
+        <h2>Your Note:</h2>
+        <ul>
+            {% for note in session['notes'] %}
+                <li><lable><input type="checkbox" name="del_notes" value="{{ note }}" >{{ note }}</lable></li>
+            {% endfor %}
+        </ul>
+        <button id="button_delete" value="remove" name="submit_note">Remove selected Notes</button>
+    </form>
+{% endif %}
+</center>
+</body>
